@@ -1,0 +1,49 @@
+from tabulate import tabulate
+def sumo(L: list[list[int]], i: int):
+    sam = 0
+    c = 0
+    while True:
+        try:
+            sam += L[c][i]
+            c = c + 1
+            #print("sum =", sam, "\n")
+        except IndexError:
+            break
+    return sam
+
+
+print("Enter values in format ""<x><space><y>""and press enter.\n For example - ""Values: 2 3"" \n "
+      "To stop entering values type ""stop"" and press enter")
+i = 0
+lost = []
+while True:
+    k = input("type: ")
+    if k.lower() == "stop":
+        break
+    try:
+        x, y = map(int, k.split())
+        lost.append([x, y])
+        i += 1
+    except:
+        print("error. use provided format")
+xmean = sumo(lost, 0) / i
+ymean = sumo(lost, 1) / i
+p = 0
+#print(lost, "\n", xmean, "\n", ymean, "\n", i)
+while p < i:
+    x = lost[p][0]
+    y = lost[p][1]
+    lost[p].append(y * (x - xmean))
+    lost[p].append((x - xmean) ** 2)
+    p += 1
+third = sumo(lost, 2)
+fourth = sumo(lost, 3)
+slope = third/fourth
+c = ymean - slope*xmean
+
+headers = ["xi", "yi", "yi(xi - xmean)", "(xi-xmean)^2"]
+print(tabulate(lost, headers=headers, tablefmt="grid"))
+
+print("x mean =", xmean , "\n y mean =", ymean, "\nslope = [\u03A3 yi(xi - xmean)/ \u03A3 (xi-xmean)^2 ]=",
+      third,"/",fourth, "=" , slope ,"\nc = ymean - m * xmean = ",
+c,"\nThus equation of best fit line is : y = ", slope,"x +", c)
