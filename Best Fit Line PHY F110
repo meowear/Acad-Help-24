@@ -17,7 +17,7 @@ print("Enter values in format ""<x><space><y>""and press enter.\n For example - 
 i = 0
 lost = []
 while True:
-    k = input("type: ")
+    k = input("Values: ")
     if k.lower() == "stop":
         break
     try:
