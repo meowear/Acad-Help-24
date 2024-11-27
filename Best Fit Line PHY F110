@@ -48,7 +48,6 @@ print(tabulate(lost, headers=headers, tablefmt="grid"))
 # print(headers)
 #for j in range(i):
 #    print(lost[j])
-
-print("x mean =", xmean , "\n y mean =", ymean, "\nslope = [\u03A3 yi(xi - xmean)/ \u03A3 (xi-xmean)^2 ]=",
+print("\nx mean =", xmean , "\n y mean =", ymean, "\nslope = [\u03A3 yi(xi - xmean)/ \u03A3 (xi-xmean)^2 ]=",
       third,"/",fourth, "=" , slope ,"\nc = ymean - m * xmean = ",
-c,"\nThus equation of best fit line is : y = ", slope,"x +", c)
+c,"\nThus equation of best fit line is :\n y = ", slope,"x +", c)
