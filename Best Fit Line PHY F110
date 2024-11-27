@@ -44,6 +44,11 @@ c = ymean - slope*xmean
 headers = ["xi", "yi", "yi(xi - xmean)", "(xi-xmean)^2"]
 print(tabulate(lost, headers=headers, tablefmt="grid"))
 
+#if you dont want tabulate module use below code
+# print(headers)
+#for j in range(i):
+#    print(lost[j])
+
 print("x mean =", xmean , "\n y mean =", ymean, "\nslope = [\u03A3 yi(xi - xmean)/ \u03A3 (xi-xmean)^2 ]=",
       third,"/",fourth, "=" , slope ,"\nc = ymean - m * xmean = ",
 c,"\nThus equation of best fit line is : y = ", slope,"x +", c)
