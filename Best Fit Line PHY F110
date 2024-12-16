@@ -42,12 +42,13 @@ slope = third/fourth
 c = ymean - slope*xmean
 
 headers = ["xi", "yi", "yi(xi - xmean)", "(xi-xmean)^2"]
+#if you want tabulate module use below code
 print(tabulate(lost, headers=headers, tablefmt="grid"))
 
 #if you dont want tabulate module use below code
 # print(headers)
-#for j in range(i):
+# for j in range(i):
 #    print(lost[j])
-print("\nx mean =", xmean , "\n y mean =", ymean, "\nslope = [\u03A3 yi(xi - xmean)/ \u03A3 (xi-xmean)^2 ]=",
-      third,"/",fourth, "=" , slope ,"\nc = ymean - m * xmean = ",
-c,"\nThus equation of best fit line is :\n y = ", slope,"x +", c)
+print("\nx mean =", xmean , "\ny mean =", ymean, "\n\nslope = [\u03A3 yi(xi - xmean)/ \u03A3 (xi-xmean)^2 ]\n      =",
+      third,"/",fourth, "\n      =" , slope ,"\n\nc = ymean - m * xmean = ",
+c,"\n\nThus equation of best fit line is :\ny = ", slope,"* x +", c)
